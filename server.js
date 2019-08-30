@@ -50,11 +50,10 @@ const listener = app.listen(process.env.PORT, function() {
     console.log('app is listening on port ' + listener.address().port);
 });
 
-
 const imageBufferToNestedArrays = (buffer, width, height, colorChannelCount)  => {
   const imagePixelRows = []
   for (var row = 0; row < height; row++) {
-    let color = ""
+    
     const rowPixels = []
     for (var col = 0; col < width; col++) {
       
@@ -64,8 +63,9 @@ const imageBufferToNestedArrays = (buffer, width, height, colorChannelCount)  =>
       
       const redValue = buffer.readUInt8(redIndex);
       const greenValue = buffer.readUInt8(greenIndex);
-      const blueValue = buffer.readUInt8(blueIndex)
-      const pixel = [redValue, greenValue, blueValue]
+      const blueValue = buffer.readUInt8(blueIndex);
+      const pixel = [redValue, greenValue, blueValue];
+      
       rowPixels.push(pixel)
     } 
     imagePixelRows.push(rowPixels)
