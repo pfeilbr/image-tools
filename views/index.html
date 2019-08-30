@@ -1,0 +1,78 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to Glitch!</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Codegen Lua Code for Image
+      </h1>
+    </header>
+
+    <main>
+      
+    <form ref="uploadForm"
+      id="uploadForm"
+      action="/upload"
+      method="post"
+      enctype="multipart/form-data">
+        <input type="file" name="imageFile" />
+        <input type="submit" value="Upload" />
+    </form>
+    
+    <br/>
+      OR
+      
+    <section>
+      <p>
+        Choose existing uploaded image
+      </p>
+      <div id="uploaded-images">
+        
+      </div>
+    </section>
+      
+    <section id="loading-section">
+      <img src="https://cdn.glitch.com/2f3070af-bb8e-4254-9a8f-4a609b799004%2Floading.gif?v=1567186888456" />
+      Processing ...
+    </section>
+      
+    <section id="output-section">
+      <p id="label">Loading ...</p>
+      <p>Data URL: <span><a id="data-url" href="#"></a></span></p>
+        
+      <textarea id="output" rows="10" cols="80"></textarea>
+
+      <br/>
+      <br/>
+
+      <p id="canvasLabel">
+        Loading ...
+      </p>
+      <canvas id="canvas"></canvas>        
+    </section>
+      
+    </main>
+  </body>
+</html>
